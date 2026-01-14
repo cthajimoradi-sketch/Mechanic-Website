@@ -11,10 +11,17 @@
             box-sizing: border-box;
         }
 
+        html {
+            background: #1a1a1a;
+            height: 100%;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            min-height: 100vh;
         }
 
         header {
@@ -304,13 +311,7 @@
         }
 
         footer {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-            position: relative;
-            z-index: 5;
+            display: none !important;
         }
 
         footer p {
@@ -481,11 +482,20 @@ Submitted: ${formData.submittedAt}
             console.log('Email Body:', emailBody);
         }
 
-        // Set minimum date to today
+        // Set minimum date to today and auto-fill service from query parameter
         document.addEventListener('DOMContentLoaded', function() {
             const dateInput = document.getElementById('date');
             const today = new Date().toISOString().split('T')[0];
             dateInput.min = today;
+
+            // Get service from URL query parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const selectedService = urlParams.get('service');
+            
+            if (selectedService) {
+                const serviceSelect = document.getElementById('service');
+                serviceSelect.value = selectedService;
+            }
         });
     </script>
 </body>
