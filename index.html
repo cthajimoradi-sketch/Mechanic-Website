@@ -62,6 +62,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             font-size: 0.9rem;
+            cursor: pointer;
         }
 
         .nav-links a:hover {
@@ -361,21 +362,153 @@
             display: block;
         }
 
-        .booking-container {
-            max-width: 700px;
-            margin: 4rem auto;
-            padding: 3rem;
-            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(212, 53, 31, 0.2);
-            border: 3px solid #d4351f;
+        /* ENGINE BAY BOOKING FORM STYLES */
+        .booking-page-wrapper {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            min-height: 100vh;
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .booking-container h2 {
-            color: #1a1a1a;
+        .booking-page-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212, 53, 31, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .back-btn {
+            position: relative;
+            z-index: 10;
+            background: #ff6b35;
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            display: inline-block;
             margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .back-btn:hover {
+            background: #d4351f;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        .engine-bay-container {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .engine-bay {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 50%, #0d0d0d 100%);
+            border: 4px solid #333;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 
+                0 0 40px rgba(212, 53, 31, 0.3),
+                inset 0 0 30px rgba(0, 0, 0, 0.5),
+                0 20px 60px rgba(0, 0, 0, 0.7);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .engine-bay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 107, 53, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(212, 53, 31, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .engine-bay-title {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .engine-bay-title h2 {
+            color: #ffd700;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            font-weight: 900;
+        }
+
+        .engine-bay-title p {
+            color: #ff6b35;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+
+        .engine-bay-line {
+            position: relative;
+            z-index: 2;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6b35, #ffd700, #ff6b35);
+            margin: 1rem auto 2rem;
+            border-radius: 2px;
+        }
+
+        .form-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-section {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid rgba(255, 107, 53, 0.2);
+        }
+
+        .form-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .section-title {
+            color: #ff6b35;
+            font-size: 1.2rem;
             text-transform: uppercase;
             letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #ffd700;
+            border-radius: 50%;
+            margin-right: 1rem;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
         }
 
         .form-group {
@@ -384,84 +517,83 @@
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-            color: #1a1a1a;
+            margin-bottom: 0.7rem;
+            font-weight: 600;
+            color: #e8e8e8;
             text-transform: uppercase;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             letter-spacing: 1px;
         }
 
         .form-group input,
         .form-group select {
             width: 100%;
-            padding: 1rem;
-            border: 2px solid #ddd;
+            padding: 1.1rem;
+            border: 2px solid rgba(255, 107, 53, 0.3);
             border-radius: 8px;
             font-size: 1rem;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: rgba(255, 255, 255, 0.08);
+            color: white;
             transition: all 0.3s;
+        }
+
+        .form-group input::placeholder,
+        .form-group select::placeholder {
+            color: rgba(255, 255, 255, 0.4);
         }
 
         .form-group input:focus,
         .form-group select:focus {
             outline: none;
-            border-color: #d4351f;
-            box-shadow: 0 0 0 3px rgba(212, 53, 31, 0.1);
+            border-color: #ff6b35;
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
+        }
+
+        .form-group select option {
+            background: #2a2a2a;
+            color: white;
         }
 
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
-        .form-row .form-group {
-            margin-bottom: 1.5rem;
+        .form-row-three {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
         }
 
         .submit-btn {
+            position: relative;
+            z-index: 2;
             background: linear-gradient(135deg, #ff6b35 0%, #d4351f 100%);
             color: white;
-            padding: 1.2rem 3rem;
-            border: none;
+            padding: 1.3rem 3rem;
+            border: 2px solid #ffd700;
             border-radius: 50px;
             font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
             width: 100%;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
+            letter-spacing: 1.5px;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
             transition: all 0.3s;
+            margin-top: 1rem;
         }
 
         .submit-btn:hover {
-            transform: scale(1.02);
-            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.6);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.6);
         }
 
         .submit-btn:active {
-            transform: scale(0.98);
-        }
-
-        .back-btn {
-            background: #555;
-            color: white;
-            padding: 0.8rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-        }
-
-        .back-btn:hover {
-            background: #1a1a1a;
+            transform: translateY(-1px);
         }
 
         footer {
@@ -470,6 +602,8 @@
             text-align: center;
             padding: 2rem;
             margin-top: 4rem;
+            position: relative;
+            z-index: 5;
         }
 
         footer p {
@@ -490,7 +624,8 @@
                 grid-template-columns: 1fr;
             }
 
-            .form-row {
+            .form-row,
+            .form-row-three {
                 grid-template-columns: 1fr;
             }
 
@@ -498,12 +633,20 @@
                 flex-direction: column;
                 gap: 1.5rem;
             }
+
+            .engine-bay {
+                padding: 2rem;
+            }
+
+            .engine-bay-title h2 {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
 <body>
     <!-- HOME PAGE -->
-    <div id="home-page">
+    <div id="home-page" class="active">
         <header>
             <nav>
                 <div class="logo">⚙️ Oil Bros</div>
@@ -519,7 +662,7 @@
             <div class="hero-content">
                 <h1>Expert Auto Care You Can Trust</h1>
                 <p>Fast, Reliable, and Affordable Mechanic Services</p>
-                <button onclick="showBookingPage()" class="cta-button">Book an Appointment</button>
+                <a href="booking.html" onclick="showBookingPage(event)" class="cta-button">Book an Appointment</a>
             </div>
         </section>
 
@@ -608,85 +751,110 @@
             <nav>
                 <div class="logo">⚙️ Oil Bros</div>
                 <ul class="nav-links">
-                    <li><a href="#" onclick="showHomePage()">Home</a></li>
+                    <li><a href="#" onclick="showHomePage(event)">Home</a></li>
                 </ul>
             </nav>
         </header>
 
-        <div class="booking-container">
-            <button class="back-btn" onclick="showHomePage()">← Back to Home</button>
-            <h2>Schedule Your Appointment</h2>
-            <form id="appointmentForm" onsubmit="handleSubmit(event)">
-                <div class="form-group">
-                    <label for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" required placeholder="John Doe">
-                </div>
+        <div class="booking-page-wrapper">
+            <div class="engine-bay-container">
+                <button class="back-btn" onclick="showHomePage(event)">← Back to Home</button>
 
-                <div class="form-group">
-                    <label for="phone">Phone Number *</label>
-                    <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
-                </div>
-
-                <div class="form-group">
-                    <label for="address">Street Address *</label>
-                    <input type="text" id="address" name="address" required placeholder="123 Main Street">
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="vehicleYear">Vehicle Year *</label>
-                        <input type="number" id="vehicleYear" name="vehicleYear" required placeholder="2020" min="1990" max="2030">
+                <div class="engine-bay">
+                    <div class="engine-bay-title">
+                        <h2>Schedule Your Service</h2>
+                        <p>Open the hood and book your appointment</p>
+                        <div class="engine-bay-line"></div>
                     </div>
-                    <div class="form-group">
-                        <label for="vehicleMake">Vehicle Make *</label>
-                        <input type="text" id="vehicleMake" name="vehicleMake" required placeholder="Toyota">
+
+                    <div class="form-wrapper">
+                        <form id="appointmentForm" onsubmit="handleSubmit(event)">
+                            <!-- CUSTOMER INFORMATION SECTION -->
+                            <div class="form-section">
+                                <div class="section-title">💼 Customer Information</div>
+                                <div class="form-group">
+                                    <label for="name">Full Name *</label>
+                                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="phone">Phone Number *</label>
+                                        <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="address">Street Address *</label>
+                                        <input type="text" id="address" name="address" required placeholder="123 Main Street">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- VEHICLE INFORMATION SECTION -->
+                            <div class="form-section">
+                                <div class="section-title">🚗 Vehicle Information</div>
+                                <div class="form-row-three">
+                                    <div class="form-group">
+                                        <label for="vehicleYear">Year *</label>
+                                        <input type="number" id="vehicleYear" name="vehicleYear" required placeholder="2020" min="1990" max="2030">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="vehicleMake">Make *</label>
+                                        <input type="text" id="vehicleMake" name="vehicleMake" required placeholder="Toyota">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="vehicleModel">Model *</label>
+                                        <input type="text" id="vehicleModel" name="vehicleModel" required placeholder="Camry">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- APPOINTMENT DETAILS SECTION -->
+                            <div class="form-section">
+                                <div class="section-title">📅 Appointment Details</div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="date">Preferred Date *</label>
+                                        <input type="date" id="date" name="date" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="time">Preferred Time *</label>
+                                        <input type="time" id="time" name="time" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="service">Service Needed *</label>
+                                    <select id="service" name="service" required>
+                                        <option value="">Select a service</option>
+                                        <option value="Oil Change">Oil Change</option>
+                                        <option value="Diagnostics">Diagnostics</option>
+                                        <option value="General Maintenance">General Maintenance</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="submit-btn">Confirm Appointment</button>
+                        </form>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label for="vehicleModel">Vehicle Model *</label>
-                    <input type="text" id="vehicleModel" name="vehicleModel" required placeholder="Camry">
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="date">Preferred Date *</label>
-                        <input type="date" id="date" name="date" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="time">Preferred Time *</label>
-                        <input type="time" id="time" name="time" required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="service">Service Needed</label>
-                    <select id="service" name="service">
-                        <option value="">Select a service (optional)</option>
-                        <option value="Oil Change">Oil Change</option>
-                        <option value="Diagnostics">Diagnostics</option>
-                        <option value="General Maintenance">General Maintenance</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-
-                <button type="submit" class="submit-btn">Confirm Appointment</button>
-            </form>
+            </div>
         </div>
 
         <footer>
             <p>&copy; 2026 Oil Bros Auto Care. All rights reserved.</p>
+            <p>Monday - Friday: 8AM - 6PM | Saturday: 9AM - 4PM</p>
         </footer>
     </div>
 
     <script>
-        function showBookingPage() {
+        function showBookingPage(event) {
+            if (event) event.preventDefault();
             document.getElementById('home-page').classList.remove('active');
             document.getElementById('booking-page').classList.add('active');
             window.scrollTo(0, 0);
         }
 
-        function showHomePage() {
+        function showHomePage(event) {
+            if (event) event.preventDefault();
             document.getElementById('booking-page').classList.remove('active');
             document.getElementById('home-page').classList.add('active');
             window.scrollTo(0, 0);
@@ -704,14 +872,12 @@
                 vehicleModel: document.getElementById('vehicleModel').value,
                 date: document.getElementById('date').value,
                 time: document.getElementById('time').value,
-                service: document.getElementById('service').value || 'Not specified',
+                service: document.getElementById('service').value,
                 submittedAt: new Date().toLocaleString()
             };
 
-            // Log the data (in production, this would be sent to a backend)
             console.log('Appointment Request:', formData);
 
-            // Create a summary message
             const emailBody = `
 NEW APPOINTMENT REQUEST FROM OIL BROS WEBSITE
 ==============================================
@@ -720,38 +886,4 @@ Name: ${formData.name}
 Phone: ${formData.phone}
 Address: ${formData.address}
 
-Vehicle Information:
-Year: ${formData.vehicleYear}
-Make: ${formData.vehicleMake}
-Model: ${formData.vehicleModel}
-
-Appointment Details:
-Date: ${formData.date}
-Time: ${formData.time}
-Service: ${formData.service}
-
-Submitted: ${formData.submittedAt}
-            `;
-
-            alert('Thank you for booking! Your appointment request has been received.\n\nPlease check your email for confirmation, or we\'ll contact you at the phone number provided.\n\n' + 
-                  'Appointment Details:\n' +
-                  formData.date + ' at ' + formData.time + '\n' +
-                  formData.vehicleYear + ' ' + formData.vehicleMake + ' ' + formData.vehicleModel);
-
-            // Reset form
-            document.getElementById('appointmentForm').reset();
-
-            // Note: To send emails, integrate with a backend service
-            // For now, log the data that would be sent
-            console.log('Email Body:', emailBody);
-        }
-
-        // Set minimum date to today
-        document.addEventListener('DOMContentLoaded', function() {
-            const dateInput = document.getElementById('date');
-            const today = new Date().toISOString().split('T')[0];
-            dateInput.min = today;
-        });
-    </script>
-</body>
-</html>
+Vehicle Information
