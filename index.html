@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuickFix Auto Care - Expert Mechanic Services</title>
+    <title>Oil Bros - Expert Mechanic Services</title>
     <style>
         * {
             margin: 0;
@@ -18,13 +18,13 @@
         }
 
         header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #d4351f 100%);
             color: white;
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(212, 53, 31, 0.4);
         }
 
         nav {
@@ -37,8 +37,15 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #ff6b35, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .nav-links {
@@ -50,48 +57,114 @@
         .nav-links a {
             color: white;
             text-decoration: none;
-            transition: opacity 0.3s;
+            transition: all 0.3s;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
         }
 
         .nav-links a:hover {
-            opacity: 0.8;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
 
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23333" width="1200" height="600"/></svg>');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #d4351f 100%);
             color: white;
-            padding: 8rem 2rem;
+            padding: 10rem 2rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -10%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(212, 53, 31, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 4rem;
             margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            animation: slideDown 0.8s ease-out;
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             margin-bottom: 2rem;
+            color: #ffd700;
+            font-weight: 500;
+            animation: slideUp 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .cta-button {
-            background: #ff6b35;
+            background: linear-gradient(135deg, #ff6b35 0%, #d4351f 100%);
             color: white;
-            padding: 1rem 2.5rem;
-            border: none;
+            padding: 1.2rem 3rem;
+            border: 2px solid #ffd700;
             border-radius: 50px;
             font-size: 1.1rem;
+            font-weight: bold;
             cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s;
             text-decoration: none;
             display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255,107,53,0.3);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.6);
+            color: #ffd700;
         }
 
         .services {
@@ -102,9 +175,25 @@
 
         .services h2 {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 3rem;
-            color: #1e3c72;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .services h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b35, #d4351f);
+            border-radius: 2px;
         }
 
         .service-grid {
@@ -114,27 +203,44 @@
         }
 
         .service-card {
-            background: white;
-            padding: 2rem;
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+            padding: 2.5rem;
             border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 8px 30px rgba(212, 53, 31, 0.15);
+            transition: all 0.3s;
+            border-left: 5px solid #d4351f;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(212, 53, 31, 0.1) 0%, transparent 70%);
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(212, 53, 31, 0.3);
+            border-left-color: #ff6b35;
         }
 
         .service-icon {
-            font-size: 3rem;
+            font-size: 4rem;
             margin-bottom: 1rem;
+            filter: drop-shadow(2px 2px 4px rgba(212, 53, 31, 0.3));
         }
 
         .service-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin-bottom: 1rem;
-            color: #1e3c72;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .service-card ul {
@@ -143,8 +249,9 @@
         }
 
         .service-card li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #eee;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #e0e0e0;
+            color: #555;
         }
 
         .service-card li:last-child {
@@ -152,27 +259,52 @@
         }
 
         .price {
-            color: #ff6b35;
+            color: #d4351f;
             font-weight: bold;
-            font-size: 1.3rem;
-            margin-top: 1rem;
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            text-transform: uppercase;
         }
 
         .about {
-            background: #f8f9fa;
-            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 5rem 2rem;
             text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(212, 53, 31, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
         }
 
         .about-content {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         .about h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 1.5rem;
-            color: #1e3c72;
+            color: #ffd700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #ddd;
         }
 
         .contact {
@@ -183,9 +315,25 @@
         }
 
         .contact h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 2rem;
-            color: #1e3c72;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .contact h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b35, #d4351f);
+            border-radius: 2px;
         }
 
         .contact-info {
@@ -201,20 +349,136 @@
         }
 
         .contact-item strong {
-            color: #1e3c72;
+            color: #d4351f;
+            text-transform: uppercase;
+        }
+
+        .hidden-page {
+            display: none;
+        }
+
+        .hidden-page.active {
+            display: block;
+        }
+
+        .booking-container {
+            max-width: 700px;
+            margin: 4rem auto;
+            padding: 3rem;
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(212, 53, 31, 0.2);
+            border: 3px solid #d4351f;
+        }
+
+        .booking-container h2 {
+            color: #1a1a1a;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #d4351f;
+            box-shadow: 0 0 0 3px rgba(212, 53, 31, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-row .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #ff6b35 0%, #d4351f 100%);
+            color: white;
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.6);
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        .back-btn {
+            background: #555;
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #1a1a1a;
         }
 
         footer {
-            background: #1e3c72;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             color: white;
             text-align: center;
             padding: 2rem;
             margin-top: 4rem;
         }
 
+        footer p {
+            margin: 0.5rem 0;
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
             .nav-links {
@@ -225,103 +489,269 @@
             .service-grid {
                 grid-template-columns: 1fr;
             }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">⚙️ QuickFix Auto Care</div>
-            <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <h1>Expert Auto Care You Can Trust</h1>
-        <p>Fast, reliable, and affordable mechanic services</p>
-        <a href="#contact" class="cta-button">Book an Appointment</a>
-    </section>
-
-    <section class="services" id="services">
-        <h2>Our Services</h2>
-        <div class="service-grid">
-            <div class="service-card">
-                <div class="service-icon">🛢️</div>
-                <h3>Oil Changes</h3>
-                <p>Keep your engine running smoothly with regular oil changes using premium oil and filters.</p>
-                <ul>
-                    <li>✓ Conventional Oil Change</li>
-                    <li>✓ Synthetic Oil Change</li>
-                    <li>✓ Filter Replacement</li>
-                    <li>✓ Fluid Level Check</li>
+    <!-- HOME PAGE -->
+    <div id="home-page">
+        <header>
+            <nav>
+                <div class="logo">⚙️ Oil Bros</div>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
-                <div class="price">Starting at $39.99</div>
-            </div>
+            </nav>
+        </header>
 
-            <div class="service-card">
-                <div class="service-icon">🔍</div>
-                <h3>Diagnostics</h3>
-                <p>Advanced computer diagnostics to identify and solve any issues with your vehicle.</p>
-                <ul>
-                    <li>✓ Check Engine Light</li>
-                    <li>✓ Computer Scanning</li>
-                    <li>✓ Electrical Systems</li>
-                    <li>✓ Performance Issues</li>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Expert Auto Care You Can Trust</h1>
+                <p>Fast, Reliable, and Affordable Mechanic Services</p>
+                <button onclick="showBookingPage()" class="cta-button">Book an Appointment</button>
+            </div>
+        </section>
+
+        <section class="services" id="services">
+            <h2>Our Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">🛢️</div>
+                    <h3>Oil Changes</h3>
+                    <p>Keep your engine running smoothly with regular oil changes using premium oil and filters.</p>
+                    <ul>
+                        <li>✓ Conventional Oil Change</li>
+                        <li>✓ Synthetic Oil Change</li>
+                        <li>✓ Filter Replacement</li>
+                        <li>✓ Fluid Level Check</li>
+                    </ul>
+                    <div class="price">Starting at $39.99</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>Diagnostics</h3>
+                    <p>Advanced computer diagnostics to identify and solve any issues with your vehicle.</p>
+                    <ul>
+                        <li>✓ Check Engine Light</li>
+                        <li>✓ Computer Scanning</li>
+                        <li>✓ Electrical Systems</li>
+                        <li>✓ Performance Issues</li>
+                    </ul>
+                    <div class="price">Starting at $79.99</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>General Maintenance</h3>
+                    <p>Complete vehicle inspections and maintenance to keep you safe on the road.</p>
+                    <ul>
+                        <li>✓ Brake Inspection</li>
+                        <li>✓ Tire Rotation</li>
+                        <li>✓ Battery Check</li>
+                        <li>✓ Multi-Point Inspection</li>
+                    </ul>
+                    <div class="price">Custom Quote</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="about-content">
+                <h2>Why Choose Oil Bros?</h2>
+                <p>With over 15 years of experience, our certified mechanics provide honest, reliable service at fair prices. We use quality parts and stand behind our work with a satisfaction guarantee. Your vehicle is in good hands with Oil Bros Auto Care.</p>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2>Get in Touch</h2>
+            <p>Ready to schedule your service? Contact us today!</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>📞 Phone:</strong><br>
+                    (555) 123-4567
+                </div>
+                <div class="contact-item">
+                    <strong>📧 Email:</strong><br>
+                    info@oilbrosautoccare.com
+                </div>
+                <div class="contact-item">
+                    <strong>📍 Location:</strong><br>
+                    123 Main Street, Your City
+                </div>
+            </div>
+            <div style="margin-top: 2rem;">
+                <a href="tel:5551234567" class="cta-button">Call Now</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Oil Bros Auto Care. All rights reserved.</p>
+            <p>Monday - Friday: 8AM - 6PM | Saturday: 9AM - 4PM</p>
+        </footer>
+    </div>
+
+    <!-- BOOKING PAGE -->
+    <div id="booking-page" class="hidden-page">
+        <header>
+            <nav>
+                <div class="logo">⚙️ Oil Bros</div>
+                <ul class="nav-links">
+                    <li><a href="#" onclick="showHomePage()">Home</a></li>
                 </ul>
-                <div class="price">Starting at $79.99</div>
-            </div>
+            </nav>
+        </header>
 
-            <div class="service-card">
-                <div class="service-icon">🔧</div>
-                <h3>General Maintenance</h3>
-                <p>Complete vehicle inspections and maintenance to keep you safe on the road.</p>
-                <ul>
-                    <li>✓ Brake Inspection</li>
-                    <li>✓ Tire Rotation</li>
-                    <li>✓ Battery Check</li>
-                    <li>✓ Multi-Point Inspection</li>
-                </ul>
-                <div class="price">Custom Quote</div>
-            </div>
-        </div>
-    </section>
+        <div class="booking-container">
+            <button class="back-btn" onclick="showHomePage()">← Back to Home</button>
+            <h2>Schedule Your Appointment</h2>
+            <form id="appointmentForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                </div>
 
-    <section class="about" id="about">
-        <div class="about-content">
-            <h2>Why Choose QuickFix?</h2>
-            <p>With over 15 years of experience, our certified mechanics provide honest, reliable service at fair prices. We use quality parts and stand behind our work with a satisfaction guarantee. Your vehicle is in good hands with QuickFix Auto Care.</p>
-        </div>
-    </section>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
+                </div>
 
-    <section class="contact" id="contact">
-        <h2>Get in Touch</h2>
-        <p>Ready to schedule your service? Contact us today!</p>
-        <div class="contact-info">
-            <div class="contact-item">
-                <strong>📞 Phone:</strong><br>
-                (555) 123-4567
-            </div>
-            <div class="contact-item">
-                <strong>📧 Email:</strong><br>
-                info@quickfixauto.com
-            </div>
-            <div class="contact-item">
-                <strong>📍 Location:</strong><br>
-                123 Main Street, Your City
-            </div>
-        </div>
-        <div style="margin-top: 2rem;">
-            <a href="tel:5551234567" class="cta-button">Call Now</a>
-        </div>
-    </section>
+                <div class="form-group">
+                    <label for="address">Street Address *</label>
+                    <input type="text" id="address" name="address" required placeholder="123 Main Street">
+                </div>
 
-    <footer>
-        <p>&copy; 2026 QuickFix Auto Care. All rights reserved.</p>
-        <p>Monday - Friday: 8AM - 6PM | Saturday: 9AM - 4PM</p>
-    </footer>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="vehicleYear">Vehicle Year *</label>
+                        <input type="number" id="vehicleYear" name="vehicleYear" required placeholder="2020" min="1990" max="2030">
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicleMake">Vehicle Make *</label>
+                        <input type="text" id="vehicleMake" name="vehicleMake" required placeholder="Toyota">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="vehicleModel">Vehicle Model *</label>
+                    <input type="text" id="vehicleModel" name="vehicleModel" required placeholder="Camry">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">Preferred Date *</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Preferred Time *</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Service Needed</label>
+                    <select id="service" name="service">
+                        <option value="">Select a service (optional)</option>
+                        <option value="Oil Change">Oil Change</option>
+                        <option value="Diagnostics">Diagnostics</option>
+                        <option value="General Maintenance">General Maintenance</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-btn">Confirm Appointment</button>
+            </form>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Oil Bros Auto Care. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function showBookingPage() {
+            document.getElementById('home-page').classList.remove('active');
+            document.getElementById('booking-page').classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function showHomePage() {
+            document.getElementById('booking-page').classList.remove('active');
+            document.getElementById('home-page').classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                address: document.getElementById('address').value,
+                vehicleYear: document.getElementById('vehicleYear').value,
+                vehicleMake: document.getElementById('vehicleMake').value,
+                vehicleModel: document.getElementById('vehicleModel').value,
+                date: document.getElementById('date').value,
+                time: document.getElementById('time').value,
+                service: document.getElementById('service').value || 'Not specified',
+                submittedAt: new Date().toLocaleString()
+            };
+
+            // Log the data (in production, this would be sent to a backend)
+            console.log('Appointment Request:', formData);
+
+            // Create a summary message
+            const emailBody = `
+NEW APPOINTMENT REQUEST FROM OIL BROS WEBSITE
+==============================================
+
+Name: ${formData.name}
+Phone: ${formData.phone}
+Address: ${formData.address}
+
+Vehicle Information:
+Year: ${formData.vehicleYear}
+Make: ${formData.vehicleMake}
+Model: ${formData.vehicleModel}
+
+Appointment Details:
+Date: ${formData.date}
+Time: ${formData.time}
+Service: ${formData.service}
+
+Submitted: ${formData.submittedAt}
+            `;
+
+            alert('Thank you for booking! Your appointment request has been received.\n\nPlease check your email for confirmation, or we\'ll contact you at the phone number provided.\n\n' + 
+                  'Appointment Details:\n' +
+                  formData.date + ' at ' + formData.time + '\n' +
+                  formData.vehicleYear + ' ' + formData.vehicleMake + ' ' + formData.vehicleModel);
+
+            // Reset form
+            document.getElementById('appointmentForm').reset();
+
+            // Note: To send emails, integrate with a backend service
+            // For now, log the data that would be sent
+            console.log('Email Body:', emailBody);
+        }
+
+        // Set minimum date to today
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateInput = document.getElementById('date');
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.min = today;
+        });
+    </script>
 </body>
 </html>
