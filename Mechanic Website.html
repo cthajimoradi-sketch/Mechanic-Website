@@ -1,0 +1,327 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickFix Auto Care - Expert Mechanic Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23333" width="1200" height="600"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 8rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background: #ff6b35;
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255,107,53,0.3);
+        }
+
+        .services {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1e3c72;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1e3c72;
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .service-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .service-card li:last-child {
+            border-bottom: none;
+        }
+
+        .price {
+            color: #ff6b35;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-top: 1rem;
+        }
+
+        .about {
+            background: #f8f9fa;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #1e3c72;
+        }
+
+        .contact {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #1e3c72;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            font-size: 1.2rem;
+        }
+
+        .contact-item strong {
+            color: #1e3c72;
+        }
+
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">⚙️ QuickFix Auto Care</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Expert Auto Care You Can Trust</h1>
+        <p>Fast, reliable, and affordable mechanic services</p>
+        <a href="#contact" class="cta-button">Book an Appointment</a>
+    </section>
+
+    <section class="services" id="services">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <div class="service-icon">🛢️</div>
+                <h3>Oil Changes</h3>
+                <p>Keep your engine running smoothly with regular oil changes using premium oil and filters.</p>
+                <ul>
+                    <li>✓ Conventional Oil Change</li>
+                    <li>✓ Synthetic Oil Change</li>
+                    <li>✓ Filter Replacement</li>
+                    <li>✓ Fluid Level Check</li>
+                </ul>
+                <div class="price">Starting at $39.99</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔍</div>
+                <h3>Diagnostics</h3>
+                <p>Advanced computer diagnostics to identify and solve any issues with your vehicle.</p>
+                <ul>
+                    <li>✓ Check Engine Light</li>
+                    <li>✓ Computer Scanning</li>
+                    <li>✓ Electrical Systems</li>
+                    <li>✓ Performance Issues</li>
+                </ul>
+                <div class="price">Starting at $79.99</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>General Maintenance</h3>
+                <p>Complete vehicle inspections and maintenance to keep you safe on the road.</p>
+                <ul>
+                    <li>✓ Brake Inspection</li>
+                    <li>✓ Tire Rotation</li>
+                    <li>✓ Battery Check</li>
+                    <li>✓ Multi-Point Inspection</li>
+                </ul>
+                <div class="price">Custom Quote</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2>Why Choose QuickFix?</h2>
+            <p>With over 15 years of experience, our certified mechanics provide honest, reliable service at fair prices. We use quality parts and stand behind our work with a satisfaction guarantee. Your vehicle is in good hands with QuickFix Auto Care.</p>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Get in Touch</h2>
+        <p>Ready to schedule your service? Contact us today!</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <strong>📞 Phone:</strong><br>
+                (555) 123-4567
+            </div>
+            <div class="contact-item">
+                <strong>📧 Email:</strong><br>
+                info@quickfixauto.com
+            </div>
+            <div class="contact-item">
+                <strong>📍 Location:</strong><br>
+                123 Main Street, Your City
+            </div>
+        </div>
+        <div style="margin-top: 2rem;">
+            <a href="tel:5551234567" class="cta-button">Call Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 QuickFix Auto Care. All rights reserved.</p>
+        <p>Monday - Friday: 8AM - 6PM | Saturday: 9AM - 4PM</p>
+    </footer>
+</body>
+</html>
