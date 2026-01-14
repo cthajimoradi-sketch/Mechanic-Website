@@ -1,4 +1,30 @@
-<!DOCTYPE html>
+.service-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(212, 53, 31, 0.15);
+            transition: all 0.3s;
+            border-left: 5px solid #d4351f;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(212, 53, 31, 0.1) 0%, transparent 70%);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(212, 53, 31, 0.3);
+            border-left-color: #ff6b35;
+        }<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -212,22 +238,6 @@
             border-left: 5px solid #d4351f;
             position: relative;
             overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100px;
-            height: 100px;
-            background: radial-gradient(circle, rgba(212, 53, 31, 0.1) 0%, transparent 70%);
-        }
-
-        .service-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 20px 50px rgba(212, 53, 31, 0.3);
-            border-left-color: #ff6b35;
         }
 
         .service-icon {
@@ -669,7 +679,7 @@
         <section class="services" id="services">
             <h2>Our Services</h2>
             <div class="service-grid">
-                <div class="service-card">
+                <div class="service-card clickable-service" onclick="goToBookingWithService('Oil Change')">
                     <div class="service-icon">🛢️</div>
                     <h3>Oil Changes</h3>
                     <p>Keep your engine running smoothly with regular oil changes using premium oil and filters.</p>
@@ -682,7 +692,7 @@
                     <div class="price">Starting at $39.99</div>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card clickable-service" onclick="goToBookingWithService('Diagnostics')">
                     <div class="service-icon">🔍</div>
                     <h3>Diagnostics</h3>
                     <p>Advanced computer diagnostics to identify and solve any issues with your vehicle.</p>
@@ -695,7 +705,7 @@
                     <div class="price">Starting at $79.99</div>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card clickable-service" onclick="goToBookingWithService('General Maintenance')">
                     <div class="service-icon">🔧</div>
                     <h3>General Maintenance</h3>
                     <p>Complete vehicle inspections and maintenance to keep you safe on the road.</p>
